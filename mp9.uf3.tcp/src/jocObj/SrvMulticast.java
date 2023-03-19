@@ -26,7 +26,7 @@ public class SrvMulticast {
         DatagramPacket packet;
         byte [] sendingData;
 
-        System.out.println("MM");
+        System.out.println("Multicast encendido");
         while(continueRunning){
 
             // Crear un objeto ByteArrayOutputStream
@@ -57,7 +57,7 @@ public class SrvMulticast {
 
     public static void main(String[] args) throws IOException {
         Tauler tauler = new Tauler();
-        SrvMulticast srvMulticast = new SrvMulticast(5557, "224.0.11.120", tauler);
+        SrvMulticast srvMulticast = new SrvMulticast(5557, "224.0.11.115", tauler);
         srvMulticast.runServer();
     }
 }

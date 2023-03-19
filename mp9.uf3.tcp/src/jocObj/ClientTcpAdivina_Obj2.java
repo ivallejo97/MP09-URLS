@@ -74,7 +74,7 @@ public class ClientTcpAdivina_Obj2 extends Thread {
         boolean juegofinalizado = false;
         ClientMulticast clientMulticast;
         try {
-            clientMulticast = new ClientMulticast(5557, "224.0.11.120");
+            clientMulticast = new ClientMulticast(5557, "224.0.11.115");
             clientMulticast.runClient();
         } catch (IOException e) {
             throw new RuntimeException(e);
