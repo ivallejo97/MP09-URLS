@@ -50,7 +50,5 @@ public class SrvTcpAdivina_Obj {
         srv.listen();
         Thread thread = new Thread(srv::listen);
         thread.start();
-        SrvMulticast srvMulticast = new SrvMulticast(5557, "224.0.11.120", tauler);
-        srvMulticast.runServer();
     }
 }

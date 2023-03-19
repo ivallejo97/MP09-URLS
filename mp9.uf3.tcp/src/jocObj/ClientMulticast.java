@@ -31,7 +31,7 @@ public class ClientMulticast {
         socket.joinGroup(group,netIf);
         System.out.printf("Connectat a %s:%d%n",group.getAddress(),group.getPort());
 
-        while(continueRunning){
+        while(!continueRunning){
             packet = new DatagramPacket(buffer, buffer.length);
             socket.setSoTimeout(5000);
             try{
@@ -39,7 +39,7 @@ public class ClientMulticast {
                 continueRunning = getData(packet.getData());
             }catch(SocketTimeoutException e){
                 System.out.println("S'ha perdut la connexió amb el servidor.");
-                continueRunning = true;
+                continueRunning = false;
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
