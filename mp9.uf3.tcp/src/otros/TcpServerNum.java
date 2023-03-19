@@ -1,17 +1,7 @@
-import secretNum.SecretNum;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+package otros;
 
 public class TcpServerNum {
-    SecretNum secretNum;
+    /*SecretNum secretNum;
     int max = 50;
     static final int PORT=9090;
     private boolean end=false;
@@ -107,5 +97,5 @@ public class TcpServerNum {
     public static void main(String[] args) {
         TcpServerNum serverNum = new TcpServerNum();
         serverNum.listen();
-    }
+    }*/
 }

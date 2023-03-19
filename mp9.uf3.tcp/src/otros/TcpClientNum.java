@@ -1,18 +1,16 @@
+package otros;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
-public class TcpSocketClient {
-
+public class TcpClientNum {
     private Scanner scanner = new Scanner(System.in);
     public void connect(String address, int port) {
         String serverData;
@@ -26,7 +24,7 @@ public class TcpSocketClient {
             socket = new Socket(InetAddress.getByName(address), port);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintStream(socket.getOutputStream());
-            System.out.println("Caneles con el servidor establecidos");
+            System.out.println("Canales con el servidor establecidos");
             //el client atén el port fins que decideix finalitzar
             while (continueConnected) {
                 serverData = in.readLine();
@@ -53,9 +51,12 @@ public class TcpSocketClient {
     }
 
     private String getRequest(String serverData) {
-        System.out.println("Server > " + serverData);
-        System.out.print("$ ");
-        return scanner.nextLine();
+        System.out.println(serverData);
+
+        if (serverData.equals("Correcte")){
+
+        }
+        return serverData;
     }
 
     private void close(Socket socket) {

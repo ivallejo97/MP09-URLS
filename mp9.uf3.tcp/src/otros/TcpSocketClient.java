@@ -1,3 +1,5 @@
+package otros;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,7 +10,10 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class TcpClientNum {
+
+
+public class TcpSocketClient {
+
     private Scanner scanner = new Scanner(System.in);
     public void connect(String address, int port) {
         String serverData;
@@ -22,7 +27,7 @@ public class TcpClientNum {
             socket = new Socket(InetAddress.getByName(address), port);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintStream(socket.getOutputStream());
-            System.out.println("Canales con el servidor establecidos");
+            System.out.println("Caneles con el servidor establecidos");
             //el client atén el port fins que decideix finalitzar
             while (continueConnected) {
                 serverData = in.readLine();
@@ -49,12 +54,9 @@ public class TcpClientNum {
     }
 
     private String getRequest(String serverData) {
-        System.out.println(serverData);
-
-        if (serverData.equals("Correcte")){
-
-        }
-        return serverData;
+        System.out.println("Server > " + serverData);
+        System.out.print("$ ");
+        return scanner.nextLine();
     }
 
     private void close(Socket socket) {
