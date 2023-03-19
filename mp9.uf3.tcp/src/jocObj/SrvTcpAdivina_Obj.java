@@ -47,7 +47,6 @@ public class SrvTcpAdivina_Obj {
     public static void main(String[] args) throws IOException {
         Tauler tauler = new Tauler();
         SrvTcpAdivina_Obj srv = new SrvTcpAdivina_Obj(5558,tauler);
-        srv.listen();
         Thread thread = new Thread(srv::listen);
         thread.start();
     }

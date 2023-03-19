@@ -55,16 +55,16 @@ public class ClientMulticast {
     }
 
     protected  boolean getData(byte[] data) throws IOException, ClassNotFoundException {
-        boolean ret = false;
+        boolean tablerosAcabados = false;
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
         ObjectInputStream ois = new ObjectInputStream(byteArrayInputStream);
         Tauler tauler = (Tauler) ois.readObject();
         System.out.println(tauler.toString());
-        if(tauler.acabats==tauler.getNumPlayers()){
+        if(tauler.acabats == tauler.getNumPlayers()){
             System.out.println("Partida acabada");
-            ret = true;
+            tablerosAcabados = true;
         }
-        return ret;
+        return tablerosAcabados;
     }
 }
